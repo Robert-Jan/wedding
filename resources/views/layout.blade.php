@@ -35,7 +35,17 @@
         </style>
 
     </head>
-    <body x-data="{ tab: '{{ ($errors->any() || session()->has('success')) ? 'message' : 'welcome' }}' }" class="text-gray-800">
-        @yield('content')
+    <body x-data="{ tab: '{{ ($errors->any() || session()->has('success')) ? 'message' : 'welcome' }}' }" class="text-gray-800 bg-blue-400">
+        <div class="hidden md:block">
+            @yield('content')
+        </div>
+        <div class="md:hidden flex flex-col justify-center items-center min-h-screen">
+            <div class="flex flex-col justify-center h-40 w-40 mb-6 text-center rounded-full shadow-inner bg-gray-200">
+                <h1 style="font-family: special" class="text-6xl ">RJ♥L</h1>
+            </div>
+            <p class="w-2/3 mx-auto mt-6 text-center">
+                Deze website is alleen geschikt voor tablets en computers.
+            </p>
+        </div>
     </body>
 </html>
